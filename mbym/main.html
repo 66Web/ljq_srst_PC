@@ -1,0 +1,36 @@
+<!--------页头---------->
+<div ng-include="'mbym/include/header.html'"></div>
+
+<!--------列表---------->
+<div class="container">
+    <!--搜索框-->
+    <div class="form-group has-feedback search">
+        <input type="text" ng-model="kw" placeholder="请输入菜品或者原材料的名称" class="form-control"/>
+        <span class="form-control-feedback glyphicon glyphicon-search"></span>
+    </div>
+
+    <!--列表  伪数据模拟-->
+    <a href="#/srstDetail/{{meal.mid}}"
+       ng-repeat="meal in mealList"
+       class="list-group-item">
+        <div class="media">
+            <div class="media-left media-middle">
+                <img ng-src="img/{{meal.img_sm}}" alt=""/>
+            </div>
+            <div class="media-body">
+                <h3>{{meal.name}}</h3>
+                <p>{{meal.material}}</p>
+                <p>{{meal.price}}</p>
+            </div>
+        </div>
+    </a>
+
+</div>
+
+    <button ng-show="hasMore" ng-click="loadMore()" class="btn btn-block btn-success">加载更多</button>
+    <p ng-hide="hasMore">没有更多数据可以加载了</p>
+
+</div>
+
+<!--------页尾---------->
+<div ng-include="'mbym/include/footer.html'"></div>

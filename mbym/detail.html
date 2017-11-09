@@ -1,0 +1,29 @@
+<div ng-include="'mbym/include/header.html'"></div>
+
+<div class="container">
+    <ul class="breadcrumb">
+       <li>
+           <a href="#/srstStart">主页</a>
+       </li>
+        <li>详情</li>
+    </ul>
+
+    <!--伪数据模拟 用panel面板实现-->
+    <div class="panel oanel-default">
+        <div class="panel-body">
+            <h4>{{meal.name}}</h4>
+            <img ng-src="img/{{meal.img_lg}}" class="img-responsive" />
+            <p>{{meal.detail}}</p>
+            <p>{{meal.material}}</p>
+            <p>{{meal.price | currency:'￥'}}</p>
+        </div>
+        <div class="panel-footer">
+            <div class="text-right">
+                <button ng-click="jump('/srstOrder/'+meal.mid)" class="btn btn-success">我要下单</button>
+                <button ng-click="jump('/srstStart')" class="btn btn-primary">我再看看</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-include="'mbym/include/footer.html'"></div>

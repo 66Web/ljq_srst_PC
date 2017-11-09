@@ -1,0 +1,41 @@
+<div ng-include="'mbym/include/header.html'"></div>
+
+<div class="container">
+    <form ng-hide="result">
+        <div class="form-group">
+            <label for="name">收货人</label>
+            <input type="text" id="name" ng-model="order.user_name" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">联系电话</label>
+            <input type="text" id="phone" ng-model="order.phone" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <label>选择性别</label>
+            <div class="radio-inline">
+                <label>
+                    <input type="radio" name='sex' ng-model="order.sex" value="1"/>男
+                </label>
+            </div>
+            <div class="radio-inline">
+                <label>
+                    <input type="radio" name='sex' ng-model="order.sex" value="2"/>女
+                </label>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label for="address">送餐地址</label>
+      <textarea name="address" ng-model="order.addr" class="form-control" id="address"></textarea>
+        </div>
+        <button ng-click="submitOrder()" class="btn btn-success btn-block">提交订单</button>
+    </form>
+    <p ng-show="result">{{result}}</p>
+</div>
+
+
+
+<div ng-include="'mbym/include/footer.html'"></div>
